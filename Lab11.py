@@ -56,8 +56,7 @@ def calculate_student_grade(student_id, submissions, assignments):
             points = assignments[assignment_id]['points']
             total_score += score / 100 * points
             total_possible += points
-    return int((total_score / total_possible) * 100) if total_possible > 0 else None
-
+    return round((total_score / total_possible) * 100) if total_possible > 0 else None
 def calculate_assignment_statistics(assignment_id, submissions):
     scores = [
         submission['score'] for submission in submissions
